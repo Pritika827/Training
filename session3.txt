@@ -1,0 +1,206 @@
+lambda
+A Developer is writing a serverless application that requires that an AWS Lambda function be
+invoked every
+10 minutes.
+What is an automated and serverless way to trigger the function?
+A. Deploy an Amazon EC2 instance based on Linux, and edit its /etc/crontab file by adding a
+command to periodically invoke the Lambda function.
+B. Configure an environment variable named PERIOD for the Lambda function. Set the value to 600.
+C. Create an Amazon CloudWatch Events rule that triggers on a regular schedule to invoke the
+Lambda function.
+D. Create an Amazon SNS topic that has a subscription to the Lambda function with a 600-second
+timer.
+
+
+An application stores images in an S3 bucket. Amazon S3 event notifications are used to
+trigger a Lambda function that resizes the images. Processing each image takes less than a second.
+How will AWS Lambda handle the additional traffic?
+A. Lambda will scale out to execute the requests concurrently.
+B. Lambda will handle the requests sequentially in the order received.
+C. Lambda will process multiple images in a single execution.
+D. Lambda will add more compute to each execution to reduce processing time
+
+A Developer is creating a Lambda function that will generate and export a file. The function
+requires 100 MB of temporary storage for temporary files while executing. These files will not be
+needed after the function is complete.
+How can the Developer MOST efficiently handle the temporary files?
+A. Store the files in EBS and delete the files at the end of the Lambda function.
+B. Copy the files to EFS and delete the files at the end of the Lambda function.
+C. Store the files in the /tmp directory and delete the files at the end of the Lambda function.
+D. Copy the files to an S3 bucket with a lifecycle policy to delete the files.
+
+A Lambda function is packaged for deployment to multiple environments, including
+development, test, production, etc. Each environment has unique set of resources such as databases,
+etc.
+How can the Lambda function use the resources for the current environment?
+A. Apply tags to the Lambda functions.
+B. Hardcore resources in the source code.
+C. Use environment variables for the Lambda functions.
+D. Use separate function for development and production.
+
+A Developer has created a large Lambda function, and deployment is failing with the
+following error:
+ClientError: An error occurred (InvalidParameterValueException) when calling the CreateFunction
+operation: Unzipped size must be smaller than XXXXXXXXX bytes', where XXXXXXXXX is the current
+Lambda limit What can the Developer do to fix this problem?
+A. Submit a limit increase request to AWS Support to increase the function to the size needed.
+B. Use a compression algorithm that is more efficient than ZIP.
+C. Break the function into multiple smaller Lambda functions.
+D. ZIP the ZIP file twice to compress it further.
+
+A company has written a Java AWS Lambda function to be triggered whenever a user uploads
+an image to an Amazon S3 bucket. The function converts the original image to several different
+formats and then copies the resulting images to another Amazon S3 bucket.
+The Developers find that no images are being copied to the second Amazon S3 bucket. They have
+tested the code on an Amazon EC2 instance with 1GB of RAM, and it takes an average of 500 seconds
+to complete.
+What is the MOST likely cause of the problem?
+A. The Lambda function has insufficient memory and needs to be increased to 1 GB to match the
+Amazon EC2 instance
+B. Files need to be copied to the same Amazon S3 bucket for processing, so the second bucket needs
+to be deleted.
+C. Lambda functions have a maximum execution limit of 300 seconds, therefore the function is not
+completing.
+D. There is a problem with the Java runtime for Lambda, and the function needs to be converted to
+node.js.
+---------------------------------------------
+EC2
+An application running on an Amazon Linux EC2 instance needs to manage the AWS
+infrastructure.
+How can the EC2 instance be configured to make AWS API calls securely?
+A. Sign the AWS CLI command using the signature version 4 process.
+B. Run the aws configure AWS CLI command and specify the access key id and secret access key.
+C. Specify a role for the EC2 instance with the necessary privileges.
+D. Pass the access key id and secret access key as parameters for each AWS CLI command.
+C
+
+An application runs on multiple EC2 instances behind an ELB.
+Where is the session data best written so that it can be served reliably across multiple requests?
+A. Write data to Amazon ElastiCache
+B. Write data to Amazon Elastic Block Store.
+C. Write data to Amazon EC2 Instance Store.
+D. Write data to the root filesystem.
+A
+
+What is one key difference between an Amazon EBS-backed and an instance-store backed
+instance?
+A. Virtual Private Cloud requires EBS backed instances
+B. Amazon EBS-backed instances can be stopped and restarted
+C. Auto scaling requires using Amazon EBS-backed instances.
+D. Instance-store backed instances can be stopped and restarted.
+
+How can software determine the public and private IP addresses of the Amazon EC2 instance
+that it is running on?
+A. Query the appropriate Amazon CloudWatch metric.
+B. Use ipconfig or ifconfig command.
+C. Query the local instance userdata.
+D. Query the local instance metadata.
+
+
+A Developer needs to use AWS X-Ray to monitor an application that is deployed on EC2
+instances.
+What steps have to be executed to perform the monitoring?
+A. Deploy the X-Ray SDK with the application and use X-Ray annotation.
+B. Install the X-Ray daemon and instrument the application code.
+C. Install the X-Ray daemon and configure it to forward data to Amazon CloudWatch Events.
+D. Deploy the X-Ray SDK with the application and instrument the application code.
+
+While developing an application that runs on Amazon EC2 in an Amazon VPC, a Developer
+identifies the need for centralized storage of application-level logs.
+Which AWS service can be used to securely store these logs?
+A. Amazon EC2 VPC Flow Logs
+B. Amazon CloudWatch Logs
+C. Amazon CloudSearch
+D. AWS CloudTrail
+
+A Developer is creating an Auto Scaling group whose instances need to publish a custom
+metric to Amazon CloudWatch.
+Which method would be the MOST secure way to authenticate a CloudWatch PUT request?
+A. Create an IAM user with PutMetricData permission and put the user credentials in a private
+repository; have applications pull the credentials as needed.
+B. Create an IAM user with PutMetricData permission, and modify the Auto Scaling launch
+configuration to inject the user credentials into the instance user data.
+C. Modify the CloudWatch metric policies to allow the PutMetricData permission to instances from
+the Auto Scaling group.
+D. Create an IAM role with PutMetricData permission and modify the Auto Scaling launching
+configuration to launch instances using that role.
+
+
+-----------------
+DB
+A company is migrating its on-premises database to Amazon RDS for MySQL. The company
+has read-heavy workloads, and wants to make sure it re-factors its code to achieve optimum read
+performance for its queries.
+How can this objective be met?
+A. Add database retries to effectively use RDS with vertical scaling
+B. Use RDS with multi-AZ deployment
+C. Add a connection string to use an RDS read replica for read queries
+D. Add a connection string to use a read replica on an EC2 instance.
+
+
+During non-peak hours, a Developer wants to minimize the execution time of a full Amazon
+DynamoDB table scan without affecting normal workloads. The workloads average half of the
+strongly consistent read capacity units during non-peak hours.
+How would the Developer optimize this scan?
+A. Use parallel scans while limiting the rate
+B. Use sequential scans
+C. Increase read capacity units during the scan operation
+D. Change consistency to eventually consistent during the scan operation
+
+
+Developer is writing transactions into a DynamoDB table called "SystemUpdates" that has 5
+write capacity units.
+Which option has the highest read throughput?
+A. Eventually consistent reads of 5 read capacity units reading items that are 4 KB in size
+B. Strongly consistent reads of 5 read capacity units reading items that are 4 KB in size
+C. Eventually consistent reads of 15 read capacity units reading items that are 1 KB in size
+D. Strongly consistent reads of 15 read capacity units reading items that are 1 KB in size
+
+In DynamoDB, what type of HTTP response codes indicate that a problem was found with the
+client request sent to the service?
+A. 5xx HTTP response code
+B. 200 HTTP response code
+C. 306 HTTP response code
+D. 4xx HTTP response code
+
+An application writes items to an Amazon DynamoDB table. As the application scales to
+thousands of instances, calls to the DynamoDB API generate occasional ThrottlingException errors.
+The application is coded in a language incompatible with the AWS SDK.
+How should the error be handled?
+A. Add exponential backoff to the application logic
+B. Use Amazon SQS as an API message bus
+C. Pass API calls through Amazon API Gateway
+D. Send the items to DynamoDB through Amazon Kinesis Data Firehose
+
+A company caches session information for a web application in an Amazon DynamoDB table.
+The company wants an automated way to delete old items from the table.
+What is the simplest way to do this?
+A. Write a script that deletes old records; schedule the scripts as a cron job on an Amazon EC2
+instance.
+B. Add an attribute with the expiration time; enable the Time To Live feature based on that attribute.
+C. Each day, create a new table to hold session data; delete the previous day's table.
+D. Add an attribute with the expiration time; name the attribute ItemExpiration
+
+A meteorological system monitors 600 temperature gauges, obtaining temperature samples
+every minute and saving each sample to a DynamoDB table. Each sample involves writing 1K of data
+and the writes are evenly distributed over time.
+How much write throughput is required for the target table?
+A. 1 write capacity unit
+B. 10 write capacity units
+C. 60 write capacity units
+D. 600 write capacity units
+E. 3600 write capacity units
+
+Which statements about DynamoDB are true? Choose 2 answers
+A. DynamoDB uses a pessimistic locking model
+B. DynamoDB uses optimistic concurrency control
+C. DynamoDB uses conditional writes for consistency
+D. DynamoDB restricts item access during reads
+E. DynamoDB restricts item access during writes
+
+How is provisioned throughput affected by the chosen consistency model when reading
+data from a DynamoDB table?
+A. Strongly consistent reads use the same amount of throughput as eventually consistent reads
+B. Strongly consistent reads use more throughput than eventually consistent reads.
+C. Strongly consistent reads use less throughput than eventually consistent reads
+D. Strongly consistent reads use variable throughput depending on read activity

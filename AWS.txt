@@ -1,0 +1,62 @@
+aws -version
+aws iam list-users
+
+aws iam create-user --user-name Pritika(username)
+aws iam list-users
+
+
+UDEMY COURSE:
+https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/
+
+LAB
+https://app.pluralsight.com/labs
+
+DEGREED
+https://degreed.com/pathway/dp6mx4r697/pathway
+
+AMAZON
+https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email
+
+COURSE
+Fundamental Cloud Concepts for AWS - by David Tuckerhttps://app.pluralsight.com/library/courses/fundamental-cloud-concepts-aws/table-of-contents
+
+Navigating the AWS Management Console - by Michael Wittig and Andreas Wittig
+https://app.pluralsight.com/library/courses/aws-navigating-management-console/table-of-contents
+
+
+Cloud Computing: The Big Picture - by David Chappell
+https://app.pluralsight.com/library/courses/cloud-computing-big-picture/table-of-contentsFundamentals of 
+Cloud Computing - by David Davis
+https://app.pluralsight.com/library/courses/cloud-computing-fundamentals/table-of-contents
+
+(https://capgemini-my.sharepoint.com/personal/aparna-sachin_vedpathak_capgemini_com/Documents/Microsoft Teams Chat Files/AWS Certified Developer Slides v4.8.1 (1).pdf)
+
+
+
+
+
+1.Create and Manage Users with AWS IAM
+https://app.pluralsight.com/labs/detail/08ba0ff7-3064-467b-87a8-df2838f3208e/toc
+
+
+2.Launch and Configure an EC2 Instance with the Wizard
+https://app.pluralsight.com/labs/detail/b7809ba2-dfeb-4b0e-9f4f-6c03e2f19151/toc
+
+
+Fundamental Cloud Concepts for AWS
+By David Tucker
+https://app.pluralsight.com/course-player?clipId=f8f9cb8f-63b9-4e3f-9bcf-ee94a0272932
+
+
+https://app.pluralsight.com/explore/certifications/topics/aws?trackId=f233c73f-d0ce-4a3a-980d-ad56d9f41f3a
+
+
+AmazonEC2FullAccess
+Amazon EC2 Full Access
+
+AWSCodeBuildDeveloperAccess
+The AWSCodeBuildDeveloperAccess policy allows access to all of the functionality of CodeBuild and project and report group-related resources.
+
+AdministratorAccess
+AWS managed policy name: AdministratorAccess. Use case: This user has full access and can delegate permissions to every service and resource in AWS.
+

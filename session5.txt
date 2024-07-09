@@ -1,0 +1,189 @@
+You have an environment that consists of a public subnet using Amazon VPC and 3 instances
+that are running in this subnet. These three instances can successfully communicate with other hosts
+on the Internet. You launch a fourth instance in the same subnet, using the same AMI and security
+group configuration you used for the others, but find that this instance cannot be accessed from the
+Internet.
+What should you do to enable internet access?
+A. Deploy a NAT instance into the public subnet.
+B. Modify the routing table for the public subnet
+C. Configure a publically routable IP Address In the host OS of the fourth instance.
+D. Assign an Elastic IP address to the fourth instance.
+
+An AWS Lambda function must read data from an Amazon RDS MySQL database in a VPC and
+also reach a public endpoint over the internet to get additional data.
+Which steps must be taken to allow the function to access both the RDS resource and the public
+endpoint?
+(Select TWO.)
+A. Modify the default configuration for the Lambda function to associate it with an Amazon VPC
+private subnet.
+B. Modify the default network access control list to allow outbound traffic.
+C. Add a NAT Gateway to the VPC.
+D. Modify the default configuration of the Lambda function to associate it with a VPC public subnet.
+E. Add an environmental variable to the Lambda function to allow outbound internet access.
+
+A company needs to secure its existing website running behind an Elastic Load Balancer. The
+website's Amazon EC2 instances are CPU-constrained.
+What should be done to secure the website while not increasing the CPU load on the EC2 web
+servers? (Select TWO.)
+A. Configure an Elastic Load Balancer with SSL pass-through.
+B. Configure SSL certificates on an Elastic Load Balancer.
+C. Configure an Elastic Load Balancer with a Loadable Storage System.
+D. Install SSL certificates on the EC2 instances.
+E. Configure an Elastic Load Balancer with SSL termination.
+
+An application needs to use the IP address of the client in its processing. The application has
+been moved into AWS and has been placed behind an Application Load Balancer (ALB). However, all
+the client IP addresses now appear to be the same. The application must maintain the ability to scale
+horizontally.
+Based on this scenario, what is the MOST cost-effective solution to this problem?
+A. Remove the application from the ALB. Delete the ALB and change Amazon Route 53 to direct
+traffic to the instance running the application.
+B. Remove the application from the ALB. Create a Classic Load Balancer in its place. Direct traffic to
+the application using the HTTP protocol.
+C. Alter the application code to inspect the X-Forwarded-For header. Ensure that the code can work
+properly if a list of IP addresses is passed in the header.
+D. Alter the application code to inspect a custom header. Alter the client code to pass the IP address
+in the custom header
+
+
+After launching an instance that you intend to serve as a NAT (Network Address Translation)
+device in a public subnet you modify your route tables to have the NAT device be the target of
+internet bound traffic of your private subnet. When you try and make an outbound connection to the
+Internet from an instance in the private subnet, you are not successful.
+Which of the following steps could resolve the issue?
+A. Attaching a second Elastic Network interface (ENI) to the NAT instance, and placing it in the
+private subnet
+B. Attaching a second Elastic Network Interface (ENI) to the instance in the private subnet, and
+placing it in the public subnet
+C. Disabling the Source/Destination Check attribute on the NAT instance
+D. Attaching an Elastic IP address to the instance in the private subnet
+
+A Developer is adding Amazon ElastiCache for Memcached to a company's existing record storage application to reduce the load on the database and increase performance. The Developer has decided to use lazy loading based on an analysis of common record handling patterns.
+Which pseudocode example would correctly implement lazy loading?
+A) record_value = db.query("UPDATE Records SET Details = {1} WHERE ID == {0}", record_key, record_value)
+cache.set (record_key, record_value)
+B) record_value = cache.get(record_key)
+if (record_value == NULL)
+record_value = db.query("SELECT Details FROM Records WHERE ID == {0}", record_key)
+cache.set (record_key, record_value)
+C) record_value = cache.get (record_key)
+db.query("UPDATE Records SET Details = {1} WHERE ID == {0}", record_key, record_value)
+D) record_value = db.query("SELECT Details FROM Records WHERE ID == {0}", record_key)
+if (record_value != NULL)
+cache.set (record_key, record_value)
+
+-----------------------------
+CI/CD . ECS
+A company needs a fully-managed source control service that will work in AWS. The service
+must ensure that revision control synchronizes multiple distributed repositories by exchanging sets of
+changes peer-to-peer. All users need to work productively even when not connected to a network.
+Which source control service should be used?
+A. Subversion
+B. AWS CodeBuild
+C. AWS CodeCommit
+D. AWS CodeStar
+
+A Developer is testing a Docker-based application that uses the AWS SDK to interact with
+Amazon DynamoDB. In the local development environment, the application has used IAM access
+keys. The application is now ready for deployment onto an ECS cluster.
+How should the application authenticate with AWS services in production?
+A. Configure an ECS task IAM role for the application to use
+B. Refactor the application to call AWS STS AssumeRole based on an instance role
+C. Configure AWS access key/secret access key environment variables with new credentials
+D. Configure the credentials file with a new access key/secret access key
+
+A company wants to containerize an existing three-tier web application and deploy it to
+Amazon ECS Fargate.
+The application is using session data to keep track of user activities.
+Which approach would provide the BEST user experience?
+A. Provision a Redic cluster in Amazon ElasticCache and save the session data in the cluster
+B. Create a session table in Amazon Redshift and save the session data in the database table.
+C. Enable session stickness in the existing Network Load Balancer and manage the session data in the
+container.
+D. Use an Amazon S3 bucket as data store and save the session data in the bucket.
+
+A company is developing a new online game that will run on top of Amazon ECS. Four
+distinct Amazon ECS services will be part of the architecture, each requiring specific permissions to
+various AWS services. The company wants to optimize the use of the underlying Amazon EC2
+instances by bin packing the containers based on memory reservation.
+Which configuration would allow the Development team to meet these requirements MOST
+securely?
+A. Create a new Identity and Access Management (IAM) instance profile containing the required
+permissions for the various ECS services, then associate that instance role with the underlying EC2
+instances.
+B. Create four distinct IAM roles, each containing the required permissions for the associated ECS
+service, then configure each ECS service to reference the associated IAM role.
+C. Create four distinct IAM roles, each containing the required permissions for the associated ECS
+service, then, create an IAM group and configure the ECS cluster to reference that group.
+D. Create four distinct IAM roles, each containing the required permissions for the associated ECS
+service, then configure each ECS task definition to referene the associated IAM role.
+
+AWS CodeBuild builds code for an application, creates the Docker image, pushes the image to
+Amazon Elastic Container Registry (Amazon ECR), and tags the image with a unique identifier.
+If the Developers already have AWS CLI configured on their workstations, how can the Docker images
+be pulled to the workstations?
+A. Run the following:docker pull REPOSITORY URI : TAG
+B. Run the output of the following:aws ecr get-loginand then run:docker pull REPOSITORY URI : TAG
+C. Run the following:aws ecr get-loginand then run:docker pull REPOSITORY URI : TAG
+D. Run the output of the following:aws ecr get-download-url-for-layerand then run:docker pull
+REPOSITORY URI : TAG
+
+Developer is trying to deploy a serverless application using AWS CodeDeploy. The
+application was updated and needs to be redeployed.
+What file does the Developer need to update to push that change through CodeDeploy?
+A. dockerrun.aws.json
+B. buildspec.yml
+C. appspec.yml
+D. ebextensions.config
+
+A Developer must repeatedly and consistently deploy a serverless RESTful API on AWS.
+Which techniques will work? (Choose two.)
+A. Define a Swagger file. Use AWS Elastic Beanstalk to deploy the Swagger file.
+B. Define a Swagger file. Use AWS CodeDeploy to deploy the Swagger file.
+C. Deploy a SAM template with an inline Swagger definition.
+D. Define a Swagger file. Deploy a SAM template that references the Swagger file.
+E. Define an inline Swagger definition in a Lambda function. Invoke the Lambda function.
+
+A company is using AWS CodePipeline to deliver one of its applications. The delivery
+pipeline is triggered by changes to the master branch of an AWS CodeCommit repository and uses
+AWS CodeBuild to implement the test and build stages of the process and AWS CodeDeploy to
+deploy the application.
+The pipeline has been operating successfully for several months and there have been no
+modifications.
+Following a recent change to the application's source code, AWS CodeDeploy has not deployed the
+updates application as expected.
+What are the possible causes? (Choose two.)
+A. The change was not made in the master branch of the AWS CodeCommit repository.
+B. One of the earlier stages in the pipeline failed and the pipeline has terminated.
+C. One of the Amazon EC2 instances in the company's AWS CodePipeline cluster is inactive.
+D. The AWS CodePipeline is incorrectly configured and is not executing AWS CodeDeploy.
+E. AWS CodePipeline does not have permissions to access AWS CodeCommit.
+
+A company has multiple Developers located across the globe who are updating code
+incrementally for a development project. When Developers upload code concurrently, internet
+connectivity is slow, and it is taking a long time to upload code for deployment in AWS Elastic
+Beanstalk.
+Which step will result in minimized upload and deployment time with the LEAST amount of
+administrative effort?
+A. Allow the Developers to upload the code to an Amazon S3 bucket, and deploy it directly to Elastic
+Beanstalk.
+B. Allow the Developers to upload the code to a central FTP server to deploy the application to
+Elastic Beanstalk.
+C. Create an AWS CodeCommit repository, allow the Developers to commit code to it, and then
+directly deploy the code to Elastic Beanstalk.
+D. Create a code repository on an Amazon EC2 instance so that all Developers can update the code,
+and deploy the application from the instance to Elastic Beanstalk.
+
+
+A company wants to implement a continuous integration for its workloads on AWS. The
+company wants to trigger unit test in its pipeline for commits-on its code repository, and wants to be
+notified of failure events in the pipeline.
+How can these requirements be met?
+A. Store the source code in AWS CodeCommit. Create a CodePipeline to automate unit testing. Use
+Amazon SNS to trigger notifications of failure events.
+B. Store the source code in GitHub. Create a CodePipeline to automate unit testing. Use Amazon SES
+to trigger notifications of failure events.
+C. Store the source code on GitHub. Create a CodePipeline to automate unit testing. Use Amazon
+CloudWatch to trigger notifications of failure events.
+D. Store the source code in AWS CodeCommit. Create a CodePipeline to automate unit testing. Use
+Amazon CloudWatch to trigger notification of failure events.

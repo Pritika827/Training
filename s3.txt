@@ -1,0 +1,149 @@
+The upload of a 15 GB object to Amazon S3 fails. The error message reads: "Your proposed
+upload exceeds the maximum allowed object size." What technique will allow the Developer to
+upload this object?
+A. Upload the object using the multi-part upload API.
+B. Upload the object over an AWS Direct Connect connection.
+C. Contact AWS Support to increase the object size limit.
+D. Upload the object to another AWS region.
+A
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html
+
+A Developer wants to encrypt new objects that are being uploaded to an Amazon S3 bucket
+by an application.
+There must be an audit trail of who has used the key during this process. There should be no change
+to the performance of the application.
+Which type of encryption meets these requirements?
+A. Server-side encryption using S3-managed keys
+B. Server-side encryption with AWS KMS-managed keys
+C. Client-side encryption with a client-side symmetric master key
+D. Client-side encryption with AWS KMS-managed keys
+B
+https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html
+
+A large e-commerce site is being designed to deliver static objects from Amazon S3. The
+Amazon S3 bucket wills server more than 300 GET requests per second. What should be done to
+optimize performance? (Select TWO.)
+A. Integrate Amazon CloudFront with Amazon S3.
+B. Enable Amazon S3 cross-region replication.
+C. Delete expired Amazon S3 server log files.
+D. Configure Amazon S3 lifecycle rules.
+E. Randomize Amazon S3 key name prefixes.
+AB
+http://jayendrapatil.com/aws-s3-best-practices/
+
+Company is currently hosting their corporate site in an Amazon S3 bucket with Static Website Hosting
+enabled.
+Currently, when visitors go to http://www.companyc.com the index.html page is returned. Company
+C now would like a new page welcome.html to be returned when a visitor enters
+http://www.companyc.com in the browser.
+Which of the following steps will allow Company C to meet this requirement? Choose 2 answers
+A. Upload an html page named welcome.html to their S3 bucket
+B. Create a welcome subfolder in their S3 bucket
+C. Set the Index Document property to welcome.html
+D. Move the index.html page to a welcome subfolder
+E. Set the Error Document property to welcome.html
+
+Company D is running their corporate website on Amazon S3 accessed from
+http//www.companyd.com. Their marketing team has published new web fonts to a separate S3
+bucket accessed by the S3 endpoint
+https://s3-us-west-1.amazonaws.com/cdfonts. While testing the new web fonts, Company D
+recognized the web fonts are being blocked by the browser.
+What should Company D do to prevent the web fonts from being blocked by the browser?
+A. Enable versioning on the cdfonts bucket for each web font
+B. Create a policy on the cdfonts bucket to enable access to everyone
+C. Add the Content-MD5 header to the request for webfonts in the cdfonts bucket from the website
+D. Configure the cdfonts bucket to allow cross-origin requests by creating a CORS configuration
+
+An application stores images in an S3 bucket. Amazon S3 event notifications are used to
+trigger a Lambda function that resizes the images. Processing each image takes less than a second.
+How will AWS Lambda handle the additional traffic?
+A. Lambda will scale out to execute the requests concurrently.
+B. Lambda will handle the requests sequentially in the order received.
+C. Lambda will process multiple images in a single execution.
+D. Lambda will add more compute to each execution to reduce processing time
+
+A Developer is storing sensitive documents in Amazon S3 that will require encryption at rest.
+The encryption keys must be rotated annually, at least.
+What is the easiest way to achieve this?
+A. Encrypt the data before sending it to Amazon S3
+B. Import a custom key into AWS KMS with annual rotation enabled
+C. Use AWS KMS with automatic key rotation
+D. Export a key from AWS KMS to encrypt the data
+
+
+An organization must store thousands of sensitive audio and video files in an Amazon S3
+bucket.
+Organizational security policies require that all data written to this bucket be encrypted.
+How can compliance with this policy be ensured?
+A. Use AWS Lambda to send notifications to the security team if unencrypted objects are pun in the
+bucket.
+B. Configure an Amazon S3 bucket policy to prevent the upload of objects that do not contain the xamzserver-
+side-encryption header.
+C. Create an Amazon CloudWatch event rule to verify that all objects stored in the Amazon S3 bucket
+are encrypted.
+D. Configure an Amazon S3 bucket policy to prevent the upload of objects that contain the x-amzserver-
+sideencryption header.
+
+A company needs to encrypt data at rest, but it wants to leverage an AWS managed service
+using its own master key.
+Which of the following AWS service can be used to meet these requirements?
+A. SSE with Amazon S3
+B. SSE with AWS KMS
+C. Client-side encryption
+D. AWS IAM roles and policies
+
+
+A static website is hosted in an Amazon S3 bucket. Several HTML pages on the site use
+JavaScript to download images from another Amazon S3 bucket. These images are not displayed
+when users browse the site.
+What is the possible cause for the issue?
+A. The referenced Amazon S3 bucket is in another region.
+B. The images must be stored in the same Amazon S3 bucket.
+C. Port 80 must be opened on the security group in which the Amazon S3 bucket is located.
+D. Cross Origin Resource Sharing must be enabled on the Amazon S3 bucket.
+
+An Amazon S3 bucket, "myawsbucket" is configured with website hosting in Tokyo region,
+what is the region-specific website endpoint?
+A. www.myawsbucket.ap-northeast-1.amazonaws.com
+B. myawsbucket.s3-website-ap-northeast-1.amazonawscom
+C. myawsbucket.amazonaws.com
+D. myawsbucket.tokyo.amazonaws.com
+
+You attempt to store an object in the US-STANDARD region in Amazon S3, and receive a
+confirmation that it has been successfully stored. You then immediately make another API call and
+attempt to read this object. S3 tells you that the object does not exist What could explain this
+behavior?
+A. US-STANDARD uses eventual consistency and it can take time for an object to be readable in a
+bucket
+B. Objects in Amazon S3 do not become visible until they are replicated to a second region.
+C. US-STANDARD imposes a 1 second delay before new objects are readable.
+D. You exceeded the bucket object limit, and once this limit is raised the object will be visible.
+
+When uploading an object, what request header can be explicitly specified in a request to
+Amazon S3 to encrypt object data when saved on the server side?
+A. x-amz-storage-class
+B. Content-MD5
+C. x-amz-security-token
+D. x-amz-server-side-encryption
+
+An application overwrites an object in Amazon S3, and then immediately reads the same
+object. Why would the application sometimes retrieve the old version of the object?
+A. S3 overwrite PUTS are eventually consistent, so the application may read the old object.
+B. The application needs to add extra metadata to label the latest version when uploading to Amazon
+S3.
+C. All S3 PUTS are eventually consistent, so the application may read the old object.
+D. The application needs to explicitly specify latest version when retrieving the object.
+
+A Developer decides to store highly secure data in Amazon S3 and wants to implement
+server-side encryption (SSE) with granular control of who can access the master key Company policy
+requires that the master key be created, rotated, and disabled easily when needed, all for security
+reasons.
+Which solution should be used to meet these requirements?
+A. SSE with Amazon S3 managed keys (SSE-S3)
+B. SSE with AWS KMS managed keys (SSE KMS)
+C. SSE with AWS Secrets Manager
+D. SSE with customer provided encryption keys
+
+
+
+

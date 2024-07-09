@@ -1,0 +1,60 @@
+A Developer is writing a mobile application that allows users to view images from an S3
+bucket. The users must be able to log in with their Amazon login, as well as Facebook and/or Google
+accounts.
+How can the Developer provide this authentication functionality?
+A. Use Amazon Cognito with web identity federation.
+B. Use Amazon Cognito with SAML-based identity federation.
+C. Use AWS IAM Access/Secret keys in the application code to allow Get* on the S3 bucket.
+D. Use AWS STS AssumeRole in the application code and assume a role with Get* permissions on the
+S3 bucket.
+A
+
+A developer is adding sign-up and sign-in functionality to an application. The application is required to
+make an API call to a custom analytics solution to log user sign-in events.
+Which combination of actions should the developer take to satisfy these requirements? (Select TWO.)
+A) Use Amazon Cognito to provide the sign-up and sign-in functionality.
+B) Use AWS IAM to provide the sign-up and sign-in functionality.
+C) Configure an AWS Config rule to make the API call triggered by the post-authentication event.
+D) Invoke an Amazon API Gateway method to make the API call triggered by the post-authentication event.
+E) Execute an AWS Lambda function to make the API call triggered by the post-authentication event.
+C
+
+A developer is developing an application for Amazon EC2 instances. To read and write records, the application must establish a connection to an Amazon DynamoDB database. The security staff must change access keys on a regular basis.
+Which technique will meet these criteria?
+
+A. Create an IAM role with read and write access to the DynamoDB table. Generate access keys for the user and store the access keys in the application as environment variables.
+B. Create an IAM user with read and write access to the DynamoDB table. Store the user name and password in the application and generate access keys using an AWS SDK.
+C. Create an IAM role, configure read and write access for the DynamoDB table, and attach to the EC2 instances.
+D. Create an IAM user with read and write access to the DynamoDB table. Generate access keys for the user and store the access keys in the application as a credentials file.
+
+How should access keys be handled in AWS according to best practices? (Select two.)
+A. Use the same access key in all applications for consistency.
+B. Delete all access keys for the account root user.
+C. Leave unused access keys in the account for tracking purposes.
+D. Embed and encrypt access keys in code for continuous deployment.
+E. Use Amazon IAM roles instead of access keys where possible.
+B,E
+
+An application has hundreds of users. Each user may use multiple devices to access the
+application. The Developer wants to assign unique identifiers to these users regardless of the device
+they use.
+Which of the following methods should be used to obtain unique identifiers?
+A. Create a user table in Amazon DynamoDB as key-value pairs of users and their devices. Use these
+keys as unique identifiers.
+B. Use IAM-generated access key IDs for the users as the unique identifier, but do not store secret
+keys.
+C. Implement developer-authenticated identities by using Amazon Cognito, and get credentials for
+these identities.
+
+An application is being developed to audit several AWS accounts. The application will run in
+Account A and must access AWS services in Accounts B and C.
+What is the MOST secure way to allow the application to call AWS services in each audited account?
+A. Configure cross-account roles in each audited account. Write code in Account A that assumes
+those roles
+B. Use S3 cross-region replication to communicate among accounts, with Amazon S3 event
+notifications to trigger Lambda functions
+C. Deploy an application in each audited account with its own role. Have Account A authenticate with
+the application
+D. Create an IAM user with an access key in each audited account. Write code in Account A that uses
+those access keys
+

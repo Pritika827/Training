@@ -1,0 +1,144 @@
+lambda
+A Developer is writing a serverless application that requires that an AWS Lambda function be
+invoked every
+10 minutes.
+What is an automated and serverless way to trigger the function?
+A. Deploy an Amazon EC2 instance based on Linux, and edit its /etc/crontab file by adding a
+command to periodically invoke the Lambda function.
+B. Configure an environment variable named PERIOD for the Lambda function. Set the value to 600.
+C. Create an Amazon CloudWatch Events rule that triggers on a regular schedule to invoke the
+Lambda function.
+D. Create an Amazon SNS topic that has a subscription to the Lambda function with a 600-second
+timer.
+
+
+An application stores images in an S3 bucket. Amazon S3 event notifications are used to
+trigger a Lambda function that resizes the images. Processing each image takes less than a second.
+How will AWS Lambda handle the additional traffic?
+A. Lambda will scale out to execute the requests concurrently.
+B. Lambda will handle the requests sequentially in the order received.
+C. Lambda will process multiple images in a single execution.
+D. Lambda will add more compute to each execution to reduce processing time
+
+A Developer is creating a Lambda function that will generate and export a file. The function
+requires 100 MB of temporary storage for temporary files while executing. These files will not be
+needed after the function is complete.
+How can the Developer MOST efficiently handle the temporary files?
+A. Store the files in EBS and delete the files at the end of the Lambda function.
+B. Copy the files to EFS and delete the files at the end of the Lambda function.
+C. Store the files in the /tmp directory and delete the files at the end of the Lambda function.
+D. Copy the files to an S3 bucket with a lifecycle policy to delete the files.
+
+A Lambda function is packaged for deployment to multiple environments, including
+development, test, production, etc. Each environment has unique set of resources such as databases,
+etc.
+How can the Lambda function use the resources for the current environment?
+A. Apply tags to the Lambda functions.
+B. Hardcore resources in the source code.
+C. Use environment variables for the Lambda functions.
+D. Use separate function for development and production.
+
+A Developer has created a large Lambda function, and deployment is failing with the
+following error:
+ClientError: An error occurred (InvalidParameterValueException) when calling the CreateFunction
+operation: Unzipped size must be smaller than XXXXXXXXX bytes', where XXXXXXXXX is the current
+Lambda limit What can the Developer do to fix this problem?
+A. Submit a limit increase request to AWS Support to increase the function to the size needed.
+B. Use a compression algorithm that is more efficient than ZIP.
+C. Break the function into multiple smaller Lambda functions.
+D. ZIP the ZIP file twice to compress it further.
+
+A company has written a Java AWS Lambda function to be triggered whenever a user uploads
+an image to an Amazon S3 bucket. The function converts the original image to several different
+formats and then copies the resulting images to another Amazon S3 bucket.
+The Developers find that no images are being copied to the second Amazon S3 bucket. They have
+tested the code on an Amazon EC2 instance with 1GB of RAM, and it takes an average of 500 seconds
+to complete.
+What is the MOST likely cause of the problem?
+A. The Lambda function has insufficient memory and needs to be increased to 1 GB to match the
+Amazon EC2 instance
+B. Files need to be copied to the same Amazon S3 bucket for processing, so the second bucket needs
+to be deleted.
+C. Lambda functions have a maximum execution limit of 300 seconds, therefore the function is not
+completing.
+D. There is a problem with the Java runtime for Lambda, and the function needs to be converted to
+node.js.
+
+---------------------------------------------
+
+An application deployed on AWS Elastic Beanstalk experiences increased error rates during
+deployments of new application versions, resulting in service degradation for users. The
+Development team believes that this is because of the reduction in capacity during the deployment
+steps. The team would like to change the deployment policy configuration of the environment to an
+option that maintains full capacity during deployment while using the existing instances.
+Which deployment policy will meet these requirements while using the existing instances?
+A. All at once
+B. Rolling
+C. Rolling with additional batch
+D. Immutable
+
+Which of the following platforms are supported by Elastic Beanstalk? Choose 2 answers
+A. Apache Tomcat
+B. .NET
+C. IBM Websphere
+D. Oracle JBoss
+E. Jetty
+
+A Developer is writing a Linux-based application to run on AWS Elastic Beanstalk.
+Application requirements state that the application must maintain full capacity during updates while
+minimizing cost.
+Which type of Elastic Beanstalk deployment policy should the Developer specify for the
+environment?
+A. Immutable
+B. Rolling
+C. All at Once
+D. Rolling with additional batch
+
+A development team is using AWS Elastic Beanstalk to deploy a two-tier application that
+consists of a load-balanced web tier and an Amazon RDS database tier in production. The team would
+like to separate the RDS instance from the Elastic Beanstalk.
+How can this be accomplished?
+A. Use the Elastic Beanstalk CLI to disassociate the database.
+B. Use the AWS CLI to disassociate the database.
+C. Change the deployment policy to disassociate the database.
+D. Recreate a new Elastic Beanstalk environment without Amazon RDS.
+
+What AWS products and features can be deployed by Elastic Beanstalk? Choose 3 answers
+A. Auto scaling groups
+B. Route 53 hosted zones
+C. Elastic Load Balancers
+D. RDS Instances
+E. Elastic IP addresses
+F. SQS Queues
+
+A customer wants to deploy its source code on an AWS Elastic Beanstalk environment. The
+customer needs to perform deployment with minimal outage and should only use existing instances
+to retain application access log.
+What deployment policy would satisfy these requirements?
+A. Rolling
+B. All at once
+C. Rolling with an additional batch
+D. Immutable
+
+An advertising company has a dynamic website with heavy traffic. The company wants to
+migrate the website infrastructure to AWS to handle everything except website development.
+Which solution BEST meets these requirements?
+A. Use AWS VM Import to migrate a web server image to AWS Launch the image on a computeoptimized
+Amazon EC2 instanceLaunch.
+B. Launch multiple Amazon Lighsall instance behind a load balancer. Set up the website on those
+instances.
+C. Deploy the website code in an AWS Elastic Beanstalk environment. Use Auto Scaling to scale the
+numbers of instance
+D. Use Amazon S3 to host the website. Use Amazon CloudFornt to deliver the content at scale.
+
+An AWS Elastic Beanstalk application needs to be deployed in multiple regions and requires a
+different Amazon Machine Image (AMI) in each region.
+Which AWS CloudFormation template key can be used to specify the correct AMI for each region?
+A. Parameters
+B. Outputs
+C. Mappings
+D. Resources
+
+
+
+
